@@ -1,0 +1,43 @@
+<nav>
+  <figure>
+    <img src="../../../assets/images/mediehuset-logo.png" alt="Logo" />
+    <figcaption>
+      <h2>MEDIE<span>SUSET</span></h2>
+      <p>4 - 5 - 6 - 7. JULI 2020</p>
+    </figcaption>
+  </figure>
+
+  <ul>
+    <li><a id="cta" routerLink="/billetter">Køb billet</a></li>
+    <li><a routerLink="/forside">Nyheder</a></li>
+
+    <li>
+      <a routerLink="/events">Events</a>
+      <span class="material-icons">
+        keyboard_arrow_down
+      </span>
+      <ul>
+        <li><a routerLink="/program">Program</a></li>
+        <li><a routerLink="/lineup">Line-up</a></li>
+      </ul>
+    </li>
+
+    <li><a routerLink="/camps">Camps</a></li>
+    <li><a routerLink="/info">Praktisk info</a></li>
+    <li *ngIf="!online"><a routerLink="/login">Login</a></li>
+    <li *ngIf="online">
+      <a routerLink="/events">Min side</a>
+      <span class="material-icons">
+        keyboard_arrow_down
+      </span>
+      <ul>
+        <li><a routerLink="/mitprogram">Mit program</a></li>
+        <li><a routerLink="/lineup">Rediger profil</a></li>
+        <li><a routerLink="/logud">Log ud</a></li>
+      </ul>
+    </li>
+  </ul>
+  <span id="search" class="material-icons">
+    search
+  </span>
+</nav>

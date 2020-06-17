@@ -1,0 +1,17 @@
+<header>
+    <app-nav></app-nav>
+</header>
+<main>
+  <section>
+    <article *ngIf="event">
+        <figure>
+            <img [src]="event.image" alt="event.title" />
+        </figure>
+      <h1>{{ event.title }}</h1>
+      <!-- <p>{{ event.description }}</p> -->
+      <div class="fade"></div>
+      <a routerLink="/events">VEND TILBAGE</a>
+    </article>
+  </section>
+</main>
+<app-footer></app-footer>

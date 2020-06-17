@@ -1,0 +1,32 @@
+<header>
+    <app-nav></app-nav>
+</header>
+<main>
+    <h1>LINE-UP</h1>
+    <section id="options">
+        <button [class.active]="this.selected === 'All'" id="all" (click)="filterBy('All', this)" type="button">A - Å</button>
+        <button [class.active]="this.selected === 'Rød scene'" id="red" (click)="filterBy('Rød scene', this)" type="button">RØD SCENE</button>
+        <button [class.active]="this.selected === 'Blå scene'" id="blue" (click)="filterBy('Blå scene', this)" type="button">BLÅ SCENE</button>
+        <button [class.active]="this.selected === 'Grøn scene'" id="green" (click)="filterBy('Grøn scene', this)" type="button">GRØN SCENE</button>
+        <button [class.active]="this.selected === 'Lilla scene'" id="purple" (click)="filterBy('Lilla scene', this)" type="button">LILLA SCENE</button>
+        <button id="filter" #filter type="button">FILTRER</button>
+    </section>
+    <section id="articles">
+        <article *ngFor="let artist of data; let i = index" [attr.data-scene]="artist.stage_name">
+            <section >
+
+                <figure>
+                    <img [src]="artist.image" alt="Artist">
+                </figure>
+
+                <div [attr.data-stage]="artist.stage_name" class="artist-info" appSwitch>
+                    <h2>{{artist.title}}</h2>
+                    <p>{{time(artist.local_time)}}</p>
+                </div>
+
+
+            </section>
+        </article>
+    </section>
+</main>
+<app-footer></app-footer>

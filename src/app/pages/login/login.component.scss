@@ -1,0 +1,60 @@
+header {
+    figure {
+        width: 100%;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+}
+
+main {
+    width: 70%;
+    margin: 0 auto;
+
+    h1 {
+        text-align: center;
+        margin: 1em;
+    }
+    section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        form {
+            display: grid;
+            margin-bottom: 10em;
+            label {
+                font-weight: 600;
+                font-size: .9em;
+                padding: 1em 0 .5em;
+            }
+            
+            input {
+                padding: 0.6em;
+            }
+
+            button {
+                font-size: 1em;
+                font-weight: 600;
+                width: 30%;
+                margin-left: auto;
+                margin-top: 1.5em;
+                border: none;
+                padding: 1em;
+                color: #fff;
+                background-color: #336699;
+            }
+
+            a {
+                color: #336699;
+            }
+        }
+    }
+    .error {
+        text-align: center;
+        padding: 2em;
+        color: red;
+        font-weight: 100;
+    }
+}

@@ -1,0 +1,114 @@
+nav {
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 30% 1fr 140px;
+  padding: 0 5%;
+  box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.15);
+
+  figure {
+    width: 100px;
+    padding: 1em;
+    display: flex;
+    align-self: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+    }
+
+    figcaption {
+      margin-left: 1em;
+
+      h2 {
+        font-size: 1.65em;
+        text-transform: uppercase;
+
+        span {
+          font-weight: 100;
+        }
+      }
+
+      p {
+        font-size: 1em;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    align-self: flex-end;
+    position: relative;
+
+    #cta {
+      background-color: #921d1d;
+      color: #fff;
+      //   padding: 0.5em 1.2em;
+      padding: 0.8em 1.6em;
+      white-space: nowrap;
+    }
+
+    li {
+      position: relative;
+      display: block;
+      //   padding: 1em;
+      padding: 1em 1em 1.5em 1em;
+
+      a {
+        font-size: 0.8em;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: black;
+        white-space: nowrap;
+      }
+
+      ul {
+        margin-top: 1.5em;
+        transform: translateX(-25%);
+        position: absolute;
+        display: none;
+        // display: block;
+        // max-height: 0;
+        width: 120px;
+        background-color: white;
+        box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        // transition: max-height ease-in-out 175ms;
+
+        li {
+          padding: 1em 0;
+          a {
+            // display: none;
+            // padding-left: 1em;
+          }
+        }
+      }
+
+      &:hover > ul,
+      &:hover > span {
+        display: block;
+      }
+
+      &:hover > ul li a {
+        // display: block;
+        // opacity: 1;
+      }
+
+      span {
+        align-self: center;
+        position: absolute;
+        bottom: -0.2em;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+      }
+    }
+  }
+
+  #search {
+    font-size: 1em;
+    align-self: flex-end;
+    padding: 1.5em 1em;
+  }
+}

@@ -1,0 +1,20 @@
+<header>
+    <app-nav></app-nav>
+    <figure>
+        <img *ngIf="nyhed" [src]="nyhed.image" alt="nyhed.title" />
+    </figure>
+</header>
+<main *ngIf="nyhed">
+  <h1 >{{nyhed.title}}</h1>
+  <p class="headline"></p>
+  <section>
+    <article>
+      <p>{{ nyhed.content }}</p>
+
+      <span>{{ time(nyhed.datetime)}}</span>
+      <b>Skrevet af: {{ nyhed.author }}</b>
+      <p *ngFor="let item of nyhed.facilities">{{ item.title }}</p>
+    </article>
+  </section>
+</main>
+<app-footer></app-footer>

@@ -1,0 +1,28 @@
+<header>
+    <app-nav></app-nav>
+    <figure>
+        <img src="../../../assets/images/login_header.png" alt="headerimage">
+    </figure>
+</header>
+<main>
+  <h1>LOGIN</h1>
+  <section>
+
+      <form [formGroup]="form" (ngSubmit)="submit()" method="POST">
+          <h2>Indtast login oplysninger</h2>
+          <label for="username">Brugernavn</label>
+          <input type="text" name="username" id="username" placeholder="Indtast dit brugernavn" formControlName="username">
+    
+          <label for="password">Adgangskode</label>
+          <input type="password" name="password" id="password" placeholder="Indtast din adgangskode" formControlName="password">
+    
+          <button type="submit">LOGIN</button>
+          
+          <a routerLink="/glemt">Glemt adgangskode?</a>
+          <p class="error" *ngIf="error">{{error}}</p>
+    
+      </form>
+  </section>
+
+</main>
+<app-footer></app-footer>

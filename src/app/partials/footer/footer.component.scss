@@ -1,0 +1,157 @@
+// footer {
+//   background-color: #181819;
+//   color: #fff;
+//   #social {
+//     a {
+//       background-color: #111;
+//       color: #fff;
+//       width: 100px;
+//       height: 100px;
+//       width: 100%;
+//       img {
+//         width: 100%;
+//       }
+//     }
+
+//     figure {
+//       background-color: #353535;
+//       width: 80px;
+//       height: 80px;
+//       border-radius: 50%;
+//       display: inline-flex;
+//       justify-content: center;
+//       align-content: center;
+//       img {
+//         width: 40%;
+//       }
+//     }
+
+//     span {
+//       background-color: red;
+//       img {
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
+
+
+
+
+footer {
+  text-align: center;
+    background-color: #121212;
+    color: #fff;
+
+    #social {
+        padding: 2em;
+
+        h2 {
+            padding: 1em 0 0;
+            font-size: 2em;
+
+            text-transform: uppercase;
+        }
+
+        span {
+            display: inline-block;
+            background-color: #4f4f4f;
+            width: 80px;
+            height: 80px;
+            font-size: 2em;
+            padding: .8em;
+            margin: 1em 1em 2em;
+            border-radius: 50%;
+
+        }
+    }
+
+    #newsletter {
+        position: relative;
+        background-image: url(../../../assets/images/header_image.jpg);
+        background-size: cover;
+        height: 400px;
+        filter: grayscale(.7);
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+
+        
+
+        form {
+          
+            text-transform: uppercase;
+            width: 50%;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            h2 {
+              font-size: 1.5em;
+            }
+    
+            p {
+                padding: 1em;
+            }
+
+            .input {
+                position: relative;
+                width: 80%;
+                margin: 0 auto;
+
+                input {
+                    padding: .5em;
+                    width: 100%;
+                    background: none;
+                    border: 1px solid #f1f1f1;
+                    text-transform: uppercase;
+                    color: white;
+                }
+
+                button {
+                    text-transform: uppercase;
+                    position: absolute;
+                    right: 4px;
+                    top: 50%;
+                    width: 50%;
+                    color: white;
+                    transform: translateY(-50%);
+                    padding: .3em;
+                    background-color: #9d2d3b;
+                    border: none;
+                }
+            }
+        }
+        
+
+    }
+
+    #hancock {
+        transform: translateY(-6em);
+        padding-bottom: 4em;
+        figure {
+          margin: 0 auto;
+
+          img {
+              width: 200px;
+          }
+
+          figcaption {
+              h2 {
+                  padding: 1em;
+                  color: #d0ad72;
+              }
+          }
+      }
+        
+    }
+}

@@ -1,0 +1,22 @@
+<header>
+    <app-nav></app-nav>
+    <figure>
+        <img src="../../../assets/images/header_image.jpg" alt="headerimage">
+    </figure>
+</header>
+<main>
+  <h1>NYHEDER</h1>
+  <section>
+    <article *ngFor="let nyhed of nyheder | slice:0:6">
+        <figure>
+            <img [src]="nyhed.image" alt="nyhed.title" />
+        </figure>
+      <h3>{{ nyhed.title }}</h3>
+      <p>{{ nyhed.teaser }}</p>
+      <div class="fade"></div>
+      <a routerLink="/nyhed/{{ nyhed.id }}">LÆS MERE</a>
+    </article>
+  </section>
+  <a id="arkiv" routerLink="/nyheder">NYHEDSARKIV</a>
+</main>
+<app-footer></app-footer>

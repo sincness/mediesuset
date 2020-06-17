@@ -1,0 +1,122 @@
+main {
+
+    h1 {
+        text-align: center;
+        margin: 1em;
+    }
+    
+    #options {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        button {
+            white-space: nowrap;
+            font-size: 1em;
+            font-weight: 600;
+            background-color: #292929;
+            color: #fff;
+            display: inline-block;
+            width: 100%;
+            padding: 1.4em 1em;
+            border: none;
+        }
+        #all, #red, #blue, #green, #purple, #filter {
+
+            transition: 200ms ease-in-out;
+        }
+        #all.active {
+            background-color: #d1d1d1;
+        }
+        #all {
+            
+            &:hover {
+                background-color: #d1d1d1;
+            }
+        }
+        #red.active {
+            background-color: #ac324c;
+        }
+        #red {
+            &:hover {
+                background-color: #ac324c;
+            }
+        }
+        #blue.active {
+            background-color: #336699;
+        }
+        #blue {
+            &:hover {
+                background-color: #336699;
+            }
+        }
+        #green.active {
+            background-color: #638b3f;
+        }
+        #green {
+            &:hover {
+                background-color: #638b3f;
+            }
+        }
+        #purple.active {
+            background-color: #88267f;
+        }
+        #purple {
+            &:hover {
+                background-color: #88267f;
+            }
+        }
+        #filter {
+            &:hover {
+                background-color: #121212;
+            }
+        }
+
+    }
+    #articles {
+        padding: 1em 0;
+        width: 70%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+        margin-bottom: 2em;
+
+        article {
+            
+            figure {
+                width: 100%;
+                height: 260px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 260px;
+                    object-fit: cover;
+                }
+            }
+
+            .artist-info {
+                color: white;
+                padding: 1em;
+
+                h2 {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    width: 100%;
+                    width: 19vw;
+                    // width: 340px;
+                    white-space: nowrap;
+                }
+
+                p {
+                    margin-top: .5em;
+                }
+            }
+            
+    }
+        }
+}
+
+.hidden {
+    display: none;
+}

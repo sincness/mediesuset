@@ -1,0 +1,112 @@
+<header>
+    <app-nav></app-nav>
+    <figure>
+        <img src="../../../assets/images/header_image.jpg" alt="headerimage">
+    </figure>
+</header>
+<main *ngIf="billet">
+  <h1>KØB BILLET</h1>
+
+  <article>
+    
+    <h2>INFORMATION OM DEN VALGTE BILLET</h2>
+    <section class="description">
+        <h3>{{ billet.name }}</h3>
+        <p>{{ billet.description }}</p>
+    </section>
+
+  </article>
+
+  <section class="details">
+      <h2>BESTILLING</h2>
+
+      <form [formGroup]="order" method="POST">
+
+        <section class="prices">
+            <input type="number" (change)="amplify($event.target.value)" value="1">
+            <p>Stk. </p>
+            <span>{{ billet.name }}</span>
+            <span class="a">á</span>
+            <p id="originalprice" >{{ billet.price }} DKK</p>
+            <p id="price">{{ price }} DKK</p>
+        </section>
+
+        <section class="total">
+            <p>Pris i alt:</p>
+            <p id="total">{{ price }} DKK</p>
+        </section>
+
+        <section class="credentiels">
+
+            <section>
+                <h3>Reserver Camp pladser</h3>
+                <div>
+                    <section>
+                        <div>               
+                            <label class="labels" for="antal">Antal</label>
+                            <label class="labels" for="camp">Vælg en camp</label>
+                        </div>
+                        <input type="number" name="antal" id="antal">
+                        <select name="camp" id="camp">
+                            <option value="Kultunaut">Camp Kultunaut</option>
+                            <option value="Colorit">Camp Colorit</option>
+                            <option value="Deluxe">Camp De Luxe</option>
+                        </select>
+                    </section>
+                </div>
+                <h3>Indtast dine kundeoplysninger</h3>
+                <label for="username">Brugernavn</label>
+                <input type="text" name="username" id="username">
+                <label for="password">Adgangskode</label>
+                <input type="password" name="password" id="password">
+                <label for="repeat">Gentag adgangskode</label>
+                <input type="password" name="repeat" id="repeat">
+                <label for="name">Navn</label>
+                <input type="text" name="name" id="name">
+                <label for="address">Adresse</label>
+                <input type="text" name="address" id="address">
+                <div>
+                    <section>
+                        <label for="postnumber">Postnummer</label>
+                        <input type="number" name="postnumber" id="postnumber">
+                    </section>
+                    <section>
+                        <label for="city">By</label>
+                        <input type="text" name="city" id="city">
+                    </section>
+                </div>
+
+            </section>
+
+            <section>
+
+                <h3>Vælg forsendelsesmetode</h3>
+
+                <label for="ship"> <span> Jeg ønsker billetterne tilsendt.</span> Vi sender billetterne til dig med posten.</label>
+                <input type="radio" name="ship" id="ship">
+                <label for="print"> <span> Jeg udskriver billetterne selv.</span> Du modtager billetterne på din e-mail. Du kan så selv udskrive dem, og du sparer således forsendelsesgebyret.</label>
+                <input type="radio" name="print" id="print">
+                <button type="submit">Send</button>
+
+
+            </section>
+
+
+        </section>
+
+
+
+      </form>
+
+
+
+  </section>
+
+
+
+  <section>
+      
+
+  </section>
+</main>
+<app-footer></app-footer>

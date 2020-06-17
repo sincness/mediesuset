@@ -1,0 +1,198 @@
+main {
+
+    h1 {
+        text-align: center;
+        margin: 1em;
+    }
+    
+    #options {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        button {
+            white-space: nowrap;
+            font-size: 1em;
+            font-weight: 600;
+            background-color: #292929;
+            color: #fff;
+            display: inline-block;
+            width: 100%;
+            padding: 1.4em 1em;
+            border: none;
+        }
+        #red, #blue, #green, #purple, #filter {
+
+            transition: 200ms ease-in-out;
+        }
+        #red.active {
+            background-color: #ac324c;
+        }
+        #red {
+            &:hover {
+                background-color: #ac324c;
+            }
+        }
+        #blue.active {
+            background-color: #336699;
+        }
+        #blue {
+            &:hover {
+                background-color: #336699;
+            }
+        }
+        #green.active {
+            background-color: #638b3f;
+        }
+        #green {
+            &:hover {
+                background-color: #638b3f;
+            }
+        }
+        #purple.active {
+            background-color: #88267f;
+        }
+        #purple {
+            &:hover {
+                background-color: #88267f;
+            }
+        }
+
+    }
+    #tables {
+        width: 70%;
+        margin: 0 auto;
+        #t1 {
+            margin: 2em 0;
+            tr {
+                th {
+
+                    background-color: #921d1d;
+                }
+            }
+        }
+        #t2 {
+            tr {
+                th {
+
+                    background-color: #336699;
+                }
+            }
+        }
+        #t3 {
+            tr {
+                th {
+
+                    background-color: #638b3f;
+                }
+            }
+        }
+        #t4 {
+            tr {
+                th {
+
+                    background-color: #88267f;
+                }
+            }
+        }
+        #t2, #t3, #t4 {
+            margin-bottom: 2em;
+        }
+    
+        #t1, #t2, #t3, #t4 {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+    
+            tr {
+                height: 3em;
+                font-weight: 600;
+                &:nth-child(even){background-color: #f2f2f2;}
+                &:hover {background-color: #ddd;}
+    
+                th {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    text-align: center;
+                    color: #fff;
+                }
+                td {
+                    border-top: 1px solid #ddd;
+                    border-bottom: 1px solid #ddd;
+                }
+                th, td {
+                    white-space: nowrap;
+                    padding: 1em;
+                }
+                td:first-child {
+                    width: 33%;
+                    text-transform: uppercase;
+                }
+                td:nth-child(2) {
+                    width: auto;
+                    // text-align: center;
+                    position: relative;
+                    span {
+                        position: absolute;
+                        bottom: 10%;
+                        left: 6%;
+                        font-size: 0.6em;
+                    }
+                }
+                td:nth-child(3) {
+                    width: 33%;
+                    a {
+                        font-weight: 400;
+                        padding: 0.5em 1.5em;
+                        border-radius: 2px;
+                        background-color: #921d1d;
+                        color: #fff;
+                    }
+                }
+            }
+    
+        }
+    }
+    #articles {
+        padding: 1em 0;
+        width: 70%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+        margin-bottom: 2em;
+
+        article {
+            
+            figure {
+                width: 100%;
+                height: 260px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 260px;
+                    object-fit: cover;
+                }
+            }
+
+            .artist-info {
+                color: white;
+                padding: 1em;
+
+                h2 {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    width: 100%;
+                    width: 19vw;
+                    // width: 340px;
+                    white-space: nowrap;
+                }
+
+                p {
+                    margin-top: .5em;
+                }
+            }
+            
+    }
+        }
+}

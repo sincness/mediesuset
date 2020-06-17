@@ -1,0 +1,70 @@
+
+<header>
+    <app-nav></app-nav>
+</header>
+<main>
+    <h1>PROGRAM</h1>
+    <section id="options">
+        <button [class.active]="this.sortBy === 'Onsdag'" id="red" (click)="filterBy('Onsdag')" type="button">ONSDAG</button>
+        <button [class.active]="this.sortBy === 'Torsdag'" id="blue" (click)="filterBy('Torsdag')" type="button">TORSDAG</button>
+        <button [class.active]="this.sortBy === 'Fredag'" id="green" (click)="filterBy('Fredag')" type="button">FREDAG</button>
+        <button [class.active]="this.sortBy === 'Lørdag'" id="purple" (click)="filterBy('Lørdag')" type="button">LØRDAG</button>
+    </section>
+    <section id="tables">
+        <table id="t1">
+            <tr>
+              <th></th>
+              <th>RØD SCENE</th>
+              <th></th>
+            </tr>
+            <tr *ngFor="let event of red" [attr.data-day]="whatDay(event.local_time)" (click)="add(event.id)">
+              <td>{{ whatTime(event.local_time) }}</td>
+              <td>{{event.title}}<span>{{ event.stage_name }}</span> </td>
+              <td></td>
+            </tr>
+          </table>
+        <table id="t2">
+            <tr>
+              <th></th>
+              <th>BLÅ SCENE</th>
+              <th></th>
+            </tr>
+            <tr *ngFor="let event of blue" [attr.data-day]="whatDay(event.local_time)" (click)="add(event.id)">
+                <td>{{ whatTime(event.local_time) }}</td>
+                <td>{{event.title}} <span>{{ event.stage_name }} </span></td>
+                <td></td>
+              </tr>
+          </table>
+        <table id="t3">
+            <tr>
+              <th></th>
+              <th>GRØN SCENE</th>
+              <th></th>
+            </tr>
+            <tr *ngFor="let event of green" [attr.data-day]="whatDay(event.local_time)" (click)="add(event.id)">
+                <td>{{ whatTime(event.local_time) }}</td>
+                <td>{{event.title}} <span>{{ event.stage_name }}</span> </td>
+                <td></td>
+              </tr>
+          </table>
+        <table id="t4">
+            <tr>
+              <th></th>
+              <th>LILLA SCENE</th>
+              <th></th>
+            </tr>
+            <tr *ngFor="let event of purple" [attr.data-day]="whatDay(event.local_time)" (click)="add(event.id)">
+              <td>{{ whatTime(event.local_time) }}</td>
+              <td>{{event.title}} <span>{{ event.stage_name }} </span> </td>
+              <td></td>
+            </tr>
+            <tr *ngIf="!purple.length">
+              <td></td>
+              <td>Ingen koncerter afholdes på denne dag</td>
+              <td></td>
+            </tr>
+          </table>
+    </section>
+    
+</main>
+<app-footer></app-footer>

@@ -1,0 +1,24 @@
+<header>
+    <app-nav></app-nav>
+    <figure>
+        <img src="../../../assets/images/header_image.jpg" alt="headerimage">
+    </figure>
+</header>
+<main>
+  <h1>CAMPS</h1>
+  <p class="headline">På Mediehuset finder du tre camp områder som hver skiller sig ud med deres specielle om enten du er til fest og ballade eller komfort og service på højt niveau. På alle camp områder er der adgang til forplejning i form af mad og drikke, og toilet og bade faciliteter. Camp områderne er placeret tæt på festivalspladsen så at vores gæster hurtigt kan komme til og fra områderne i mellem de mange events. Det er muligt at reserevere pladser på de forskellige camp områder - dog kræver Camp Kultunaut og De Luxe 4 dages partout armbånd og De Luxe armbånd. Reservation kan foretages når du bestiller billet.</p>
+  <section>
+    <article *ngFor="let camp of camps">
+        <figure>
+            <img [src]="camp.image" alt="camp.name" />
+        </figure>
+      <h3>{{ camp.name }}</h3>
+      <p>{{ camp.description }}</p>
+    <span><b>Adgang: </b> {{ camp.num_people }}</span>
+    <span><b>Samlet antal pladser: </b> {{ camp.num_people }} </span>
+    <span><b>Ledige antal pladser: </b> {{ camp.num_people }} </span>
+      <a routerLink="/camp/{{ camp.id }}">LÆS MERE</a>
+    </article>
+  </section>
+</main>
+<app-footer></app-footer>
