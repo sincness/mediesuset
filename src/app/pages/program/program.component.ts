@@ -98,7 +98,7 @@ export class ProgramComponent implements OnInit {
     });
   }
 
-  add(eventid: number) {
+  add(eventid: string) {
     this.http.add(eventid);
   }
   

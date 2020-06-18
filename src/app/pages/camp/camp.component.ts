@@ -25,7 +25,7 @@ export class CampComponent implements OnInit {
     });
 
     setTimeout(() => {
-      console.log(this.open);
+      console.log(this.camp);
     }, 3000);
 
     // this.camp.facilities.filter(item => item.id === 8 ? this.open = item : this.open = undefined);

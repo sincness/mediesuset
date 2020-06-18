@@ -1,9 +1,60 @@
 main {
+
+    width: 70%;
+    margin: 0 auto 4em;
+
+
     h1 {
         text-align: center;
         padding: 2.5em 0 2em;
     }
     section {
-        
+        h2 {
+            background-color: #292929;
+            color: #fff;
+            padding: 1em;
+        }
+        article:last-child {
+            margin-bottom: 5em;
+        }
+        article {
+            border-bottom: .5px solid #000;
+            display: flex;
+            align-items: center;
+
+            h3 {
+                color: #fff;
+                width: 30%;
+                padding: 1em;
+            }
+
+            p {
+                margin-left: 1em;
+            }
+
+            #delete {
+                display: block;
+                margin-left: auto;
+                margin-right: 1em;
+                cursor: pointer;
+            }
+
+
+
+        }
+
+        .red {
+            background-color: red;
+        }
+        .blue {
+            background-color: royalblue;
+        }
+        .green {
+            background-color: greenyellow;
+        }
+        .purple {
+            background-color: purple;
+        }
+
     }
 }

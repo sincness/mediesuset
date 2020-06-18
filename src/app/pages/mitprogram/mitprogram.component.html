@@ -4,13 +4,15 @@
 </header>
 <main>
     <h1>MIT PROGRAM</h1>
-    <section>
-        <h3>Dag</h3>
-        <section>
-            <h2></h2>
-            <p></p>
-        </section>
-        
+    <section *ngFor="let event of program; let i = index">
+        <h2>{{ event.day}}</h2>
+        <article *ngFor="let item of event.days; let i = index">
+            <h3 [class]="checkColor(item.stage_name)">{{ item.stage_name }} Kl. {{ whatTime(item.datetime) }}</h3>
+            <p>{{ item.event_title }}</p>
+            <span id="delete" class="material-icons" (click)="remove(item.id, $event)">
+                delete_forever
+            </span>
+        </article>
     </section>
     
 </main>

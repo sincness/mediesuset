@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 interface User {
   username: string;
   password: string;
-  token?: string;
+  access_token?: string;
   user_id?: string;
 }
 @Injectable({

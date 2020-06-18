@@ -48,22 +48,37 @@ export class HttpService {
     return this.http.get(`https://api.mediehuset.net/mediesuset/stages/${id}`);
   }
 
-  postProgram(data, headers) {
-    return this.http.post(`https://api.mediehuser.net/mediesuset/programme`, data, headers);
+  getProgram(id, headers) {
+    return this.http.get(`https://api.mediehuset.net/mediesuset/programme/${id}`, headers);
   }
 
-  add(eid: number) {
-    const uid = this.auth.getCookie('user_id');
-    const token = this.auth.getCookie('token');
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    const formData: any = new FormData();
-    formData.append('user_id', uid);
-    formData.append('event_id', eid);
-    console.log(uid + token);
-    
-    console.dir(formData);
-    this.postProgram(formData, { headers }).subscribe(res => {
+  postProgram(data, headers) {
+    return this.http.post(`https://api.mediehuset.net/mediesuset/programme`, data, headers);
+  }
+
+  remove(eid: string) {
+    const header = new HttpHeaders().set('Authorization', `Bearer ${this.auth.getCookie('token')}`);
+    return this.http.delete(`https://api.mediehuset.net/mediesuset/programme/${eid}`, { headers: header } );
+  }
+
+  add(eid: string) {
+    const uid = this.uid();
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.auth.getCookie('token')}`);
+    const data = new FormData();
+    data.append('user_id', uid);
+    data.append('event_id', eid);
+
+    this.postProgram(data, { headers }).subscribe(res => {
       console.log(res);
+      // Lav error handling på om res.status er true
     });
+  }
+
+  uid() {
+    return this.auth.currentUserValue.user_id;
+  }
+
+  token() {
+    return this.auth.currentUserValue.access_token;
   }
 }
