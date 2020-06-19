@@ -200,4 +200,41 @@ main {
             
     }
         }
+
+
+
+
+    }
+
+
+.confirm {
+    background-color: #50c750;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 300;
+    animation: fade 2000ms ease-in-out;
+
+
+    p {
+        color: #fff;
+        text-align: center;
+        padding: .5em;
+        // z-index: 300;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

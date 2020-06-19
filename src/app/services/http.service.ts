@@ -67,15 +67,26 @@ export class HttpService {
     return this.http.delete(`https://api.mediehuset.net/mediesuset/programme/${eid}`, { headers: header } );
   }
 
-  add(eid: string) {
+  add(eid: string, title: string) {
     const uid = this.uid();
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.auth.getCookie('token')}`);
     const data = new FormData();
     data.append('user_id', uid);
     data.append('event_id', eid);
 
-    this.postProgram(data, { headers }).subscribe(res => {
+    this.postProgram(data, { headers }).subscribe((res: any) => {
       console.log(res);
+      if (res.status === true) {
+        document.body.insertAdjacentHTML('afterbegin', 
+          `<section class="confirm">
+            <p>${title} er blevet tilføjet til Mit program.</p>
+          </section>`
+        );
+
+        setTimeout(() => {
+          document.getElementsByClassName('confirm')[0].remove();
+        }, 2000);
+      } 
       // Lav error handling på om res.status er true
     });
   }

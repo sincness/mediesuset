@@ -16,6 +16,7 @@ import { InfoComponent } from './pages/info/info.component';
 import { ProgramComponent } from './pages/program/program.component';
 import { BestillingComponent } from './pages/bestilling/bestilling.component';
 import { MitprogramComponent } from './pages/mitprogram/mitprogram.component';
+import { OrdreComponent } from './pages/ordre/ordre.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'forside', pathMatch: 'full' },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'program', component: ProgramComponent },
   { path: 'mitprogram', component: MitprogramComponent },
   { path: 'info', component: InfoComponent },
+  { path: 'ordre', component: OrdreComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logud', component: LogudComponent },
 

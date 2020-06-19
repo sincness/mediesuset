@@ -3,11 +3,13 @@ import { HttpService } from 'src/app/services/http.service';
 import { element } from 'protractor';
 import { HttpHeaders } from '@angular/common/http';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'app-program',
   templateUrl: './program.component.html',
-  styleUrls: ['./program.component.scss']
+  styleUrls: ['./program.component.scss'],
+  encapsulation: ViewEncapsulation.None
+
 })
 export class ProgramComponent implements OnInit {
   days = ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'];
@@ -98,8 +100,8 @@ export class ProgramComponent implements OnInit {
     });
   }
 
-  add(eventid: string) {
-    this.http.add(eventid);
+  add(eventid: string, title: string) {
+    this.http.add(eventid, title);
   }
   
 

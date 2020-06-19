@@ -28,6 +28,7 @@ import { CampComponent } from './pages/camp/camp.component';
 import { BestillingComponent } from './pages/bestilling/bestilling.component';
 import { MitprogramComponent } from './pages/mitprogram/mitprogram.component';
 import { ColorSceneDirective } from './directives/color-scene.directive';
+import { OrdreComponent } from './pages/ordre/ordre.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { ColorSceneDirective } from './directives/color-scene.directive';
     BestillingComponent,
     MitprogramComponent,
     ColorSceneDirective,
+    OrdreComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [],

@@ -17,7 +17,7 @@
               <th>RØD SCENE</th>
               <th></th>
             </tr>
-            <tr *ngFor="let event of red" [attr.data-day]="whatDay(event.local_time)" (click)="add(event.id)">
+            <tr *ngFor="let event of red" [attr.data-day]="whatDay(event.local_time)" (click)="add(event.id, event.title)">
               <td>{{ whatTime(event.local_time) }}</td>
               <td>{{event.title}}<span>{{ event.stage_name }}</span> </td>
               <td></td>
@@ -29,7 +29,7 @@
               <th>BLÅ SCENE</th>
               <th></th>
             </tr>
-            <tr *ngFor="let event of blue" [attr.data-day]="whatDay(event.local_time)" (click)="add(event.id)">
+            <tr *ngFor="let event of blue" [attr.data-day]="whatDay(event.local_time)" (click)="add(event.id, event.title)">
                 <td>{{ whatTime(event.local_time) }}</td>
                 <td>{{event.title}} <span>{{ event.stage_name }} </span></td>
                 <td></td>
@@ -41,7 +41,7 @@
               <th>GRØN SCENE</th>
               <th></th>
             </tr>
-            <tr *ngFor="let event of green" [attr.data-day]="whatDay(event.local_time)" (click)="add(event.id)">
+            <tr *ngFor="let event of green" [attr.data-day]="whatDay(event.local_time)" (click)="add(event.id, event.title)">
                 <td>{{ whatTime(event.local_time) }}</td>
                 <td>{{event.title}} <span>{{ event.stage_name }}</span> </td>
                 <td></td>
@@ -53,7 +53,7 @@
               <th>LILLA SCENE</th>
               <th></th>
             </tr>
-            <tr *ngFor="let event of purple" [attr.data-day]="whatDay(event.local_time)" (click)="add(event.id)">
+            <tr *ngFor="let event of purple" [attr.data-day]="whatDay(event.local_time)" (click)="add(event.id, event.title)">
               <td>{{ whatTime(event.local_time) }}</td>
               <td>{{event.title}} <span>{{ event.stage_name }} </span> </td>
               <td></td>

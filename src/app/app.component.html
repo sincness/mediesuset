@@ -9,6 +9,9 @@
         <li><a routerLink="/lineup" (click)="anim()">LINE-UP</a></li>
         <li><a routerLink="/camps" (click)="anim()">CAMPS</a></li>
         <li><a routerLink="/info" (click)="anim()">PRAKTISK INFO</a></li>
-        <li><a routerLink="/login" (click)="anim()">LOGIN</a></li>
+        <li *ngIf="!online"><a routerLink="/login" (click)="anim()">LOGIN</a></li>
+        <li *ngIf="online"><a routerLink="/mitprogram" (click)="anim()">MIT PROGRAM</a></li>
+        <li *ngIf="online"><a routerLink="/logud" (click)="anim()">LOG UD</a></li>
+    
     </ul>
 </nav>
