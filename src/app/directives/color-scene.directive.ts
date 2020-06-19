@@ -30,10 +30,7 @@ export class ColorSceneDirective {
             element.nativeElement.style.backgroundColor = '#88267f';
             break;
         }
-
       }
-    
-
   }
 
 

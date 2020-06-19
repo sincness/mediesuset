@@ -20,6 +20,9 @@ main {
     section {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 950px) {
+            display: block;
+        }
 
         form {
             display: grid;
@@ -34,6 +37,10 @@ main {
                 padding: 0.6em;
             }
 
+            span {
+                animation: fade 2000ms ease-in-out forwards;
+            }
+
             button {
                 font-size: 1em;
                 font-weight: 600;
@@ -44,6 +51,10 @@ main {
                 padding: 1em;
                 color: #fff;
                 background-color: #336699;
+                &:disabled {
+                    opacity: .35;
+                    cursor: unset;
+                }
             }
 
             a {
@@ -52,9 +63,24 @@ main {
         }
     }
     .error {
-        text-align: center;
-        padding: 2em;
         color: red;
         font-weight: 100;
+        padding: .8em .4em;
+        font-size: .8em
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

@@ -10,7 +10,7 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  form: FormGroup;
+  login: FormGroup;
   x: any;
   loading = false;
   submitted = false;
@@ -23,9 +23,9 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.form = this.fb.group({
+    this.login = this.fb.group({
       username: ['', Validators.required],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
     
 
@@ -33,8 +33,16 @@ export class LoginComponent implements OnInit {
   }
 
   // getter funktion til lettere at indhente formdata
-  get f() { return this.form.controls; }
+  get f() { return this.login.controls; }
 
+  get username() {
+    return this.login.get('username');
+  }
+
+  get password() {
+    return this.login.get('password');
+  }
+  
   submit() {
     const userdata = {
       username: this.f.username.value,
@@ -52,7 +60,10 @@ export class LoginComponent implements OnInit {
           },
           error => {
               console.log(error);
-              this.error = error;
+              this.error = error.statusText;
+              setTimeout(() => {
+                  this.error = '';
+              }, 2000);
           });
     } else {
       console.error('Udfyld venligst formularen!');
@@ -74,6 +85,7 @@ export class LoginComponent implements OnInit {
     }
 
 }
+
 
 
 }

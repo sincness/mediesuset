@@ -17,13 +17,13 @@ export class AppComponent {
   menu() {
     if (this.menuOpen) {
       this.get('#side-nav').style.width = '250px';
-      this.get('#main').style.marginLeft = '250px';
+      // this.get('#main').style.marginLeft = '250px';
       this.get('#main-nav').style.marginLeft = '250px';
       this.get('footer').style.marginLeft = '250px';
       this.get('#main-nav > span').textContent = 'menu_open';
     } else if (!this.menuOpen) {
       this.get('#side-nav').style.width = '0';
-      this.get('#main').style.marginLeft = '0';
+      // this.get('#main').style.marginLeft = '0';
       this.get('footer').style.marginLeft = '0';
       this.get('#main-nav').style.marginLeft = '0';
       this.get('#main-nav > span').textContent = 'menu';
@@ -37,7 +37,7 @@ export class AppComponent {
 
   anim() {
     this.get('#side-nav').style.width = '0';
-    this.get('#main').style.marginLeft = '0';
+    // this.get('#main').style.marginLeft = '0';
     this.get('#main-nav').style.marginLeft = '0';
     this.get('footer').style.marginLeft = '0';
     this.get('#main-nav > span').textContent = 'menu';

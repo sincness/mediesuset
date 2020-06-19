@@ -23,7 +23,7 @@
       <form [formGroup]="order" method="POST">
 
         <section class="prices">
-            <input formControlName="antal" type="number" (change)="amplify($event.target.value)" value="1">
+            <input formControlName="antal" type="number" (keyup)="amplify($event.target.value)" ngModel=1 min="1">
             <p>Stk. </p>
             <span>{{ billet.name }}</span>
             <span class="a">á</span>
@@ -32,8 +32,15 @@
         </section>
 
         <section class="total">
+            <div class="error" >
+                <p *ngIf="f.antal.invalid && f.antal.touched">
+                    Angiv venligst antal af billetter
+                </p>
+            </div>
             <p>Pris i alt:</p>
             <p id="total">{{ price }} DKK</p>
+
+            
         </section>
 
         <section class="credentiels">
@@ -46,8 +53,9 @@
                             <label class="labels" for="camppladser">Antal</label>
                             <label class="labels" for="camp">Vælg en camp</label>
                         </div>
-                        <input type="number" name="camppladser" id="antal">
+                        <input type="number" name="camppladser" id="antal" formControlName="camppladser" ngModel=1 min="1">
                         <select formControlName="camp" id="camp">
+                            <option selected disabled hidden value="">Vælg en camp</option>
                             <option value="1">Camp Kultunaut</option>
                             <option value="2">Camp Colorit</option>
                             <option value="3">Camp De Luxe</option>
@@ -57,14 +65,40 @@
                 <h3>Indtast dine kundeoplysninger</h3>
                 <label for="username">Brugernavn</label>
                 <input type="text" formControlName="username" id="username" placeholder="Indtast dit brugernavn">
+                <div class="error" >
+                    <p *ngIf="f.username.invalid && f.username.touched">
+                        Angiv venligst en gyldig adgangskode
+                    </p>
+                </div>
+
                 <label for="password">Adgangskode</label>
                 <input type="password" formControlName="password" id="password" placeholder="Indtast en adgangskode">
+                <div class="error" >
+                    <p *ngIf="f.password.invalid && f.password.touched">
+                        Angiv venligst et gyldigt brugernavn
+                    </p>
+                </div>
                 <label for="repeat">Gentag adgangskode</label>
                 <input type="password" formControlName="repeat" id="repeat" placeholder="Gentag adgangskode">
+                <div class="error" >
+                    <p *ngIf="f.repeat.invalid && f.repeat.touched">
+                        Gentag adgangskode
+                    </p>
+                </div>
                 <label for="name">Navn</label>
                 <input type="text" formControlName="name" id="name" placeholder="Indtast dit navn">
+                <div class="error" >
+                    <p *ngIf="f.name.invalid && f.name.touched">
+                        Angiv venligst et navn
+                    </p>
+                </div>
                 <label for="address">Adresse</label>
                 <input type="text" formControlName="address" id="address" placeholder="Indtast din adresse">
+                <div class="error" >
+                    <p *ngIf="f.address.invalid && f.address.touched">
+                        Angiv venligst en adresse
+                    </p>
+                </div>
                 <div class="postcity">
                     <section>
                         <label class="labels" for="postnumber">Postnummer</label>
@@ -72,6 +106,16 @@
                     </section>
                     <input type="number" formControlName="postnumber" id="postnumber">
                     <input type="text" formControlName="city" id="city" placeholder="Indtast din by">
+                    <div class="error" >
+                        <p *ngIf="f.postnumber.invalid && f.postnumber.touched">
+                            Angiv venligst postnummer
+                        </p>
+                    </div>
+                    <div class="error" >
+                        <p *ngIf="f.city.invalid && f.city.touched">
+                            Angiv venligst by
+                        </p>
+                    </div>
                 </div>
 
             </section>
@@ -87,7 +131,7 @@
                     <input type="radio" value="2" formControlName="radio" id="print">
                     <label for="print"> <span> Jeg udskriver billetterne selv.</span> Du modtager billetterne på din e-mail. Du kan så selv udskrive dem, og du sparer således forsendelsesgebyret.</label>
                 </div>
-                <button (click)="buy()" type="submit">Send</button>
+                <button [disabled]="!order.valid" (click)="buy()" type="submit">Send</button>
 
 
             </section>

@@ -21,8 +21,6 @@ export class BestillingComponent implements OnInit {
       this.billet = res;
       this.billet = this.billet.item;
       this.price = this.billet.price;
-      // console.log(this.billet);
-      
     });
    }
 
@@ -40,6 +38,12 @@ export class BestillingComponent implements OnInit {
       city: ['', Validators.required],
       radio: ['', Validators.required],
     });
+  }
+
+  // getter funktion
+
+  get f() {
+    return this.order.controls;
   }
 
   buy() {

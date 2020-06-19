@@ -40,7 +40,7 @@ export class NavComponent implements OnInit {
   // routerLink funktion til mobile sidenav transition
   routerLink(url) {
     this.get('#side-nav').style.width = '0';
-    this.get('#main').style.marginLeft = '0';
+    // this.get('#main').style.marginLeft = '0';
     this.get('footer').style.marginLeft = '0';
     this.get('#main-nav').style.marginLeft = '0';
     this.get('#main-nav > span').textContent = 'menu';

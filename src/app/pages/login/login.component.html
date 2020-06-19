@@ -8,18 +8,20 @@
   <h1>LOGIN</h1>
   <section>
 
-      <form [formGroup]="form" (ngSubmit)="submit()" method="POST">
+      <form [formGroup]="login" (ngSubmit)="submit()" method="POST">
           <h2>Indtast login oplysninger</h2>
           <label for="username">Brugernavn</label>
-          <input type="text" name="username" id="username" placeholder="Indtast dit brugernavn" formControlName="username">
-    
+          <input type="text" formControlName="username" id="username" placeholder="Indtast dit brugernavn" formControlName="username">
+          <div *ngIf="f.username.invalid && f.username.touched" class="error"><p>Brugernavnet er ikke gyldigt</p></div>
           <label for="password">Adgangskode</label>
-          <input type="password" name="password" id="password" placeholder="Indtast din adgangskode" formControlName="password">
-    
-          <button type="submit">LOGIN</button>
+          <input type="password" formControlName="password" id="password" placeholder="Indtast din adgangskode" formControlName="password">
+          <div *ngIf="f.password.invalid && f.password.touched" class="error"><p>Adgangskoden er ikke gyldig</p></div>
+          <span class="error" *ngIf="error">{{error}}</span>
+        
+          <button [disabled]="!login.valid" type="submit">LOGIN</button>
           
+
           <a routerLink="/glemt">Glemt adgangskode?</a>
-          <p class="error" *ngIf="error">{{error}}</p>
     
       </form>
   </section>

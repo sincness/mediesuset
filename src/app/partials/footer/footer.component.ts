@@ -16,7 +16,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      email: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]]
     });
   }
 
@@ -31,5 +31,11 @@ export class FooterComponent implements OnInit {
 
     });
   }
+
+  get email() {
+    return this.form.get('email');
+  }
+
+
 
 }

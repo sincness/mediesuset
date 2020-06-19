@@ -13,9 +13,10 @@
 
       <div class="input">
         <input type="email" formControlName="email" id="email" placeholder="Indtast din email"/>
-        <button (click)="submit()" type="button" >Tilmeld nyhedsbrev</button>
+        <button [disabled]="!form.valid" (click)="submit()" type="button" >Tilmeld nyhedsbrev</button>
       </div>
     </form>
+    <div *ngIf="email.invalid && email.touched" id="error"><p>Indtast en gyldig email</p></div>
     
    
   </section>
