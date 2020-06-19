@@ -1,9 +1,87 @@
-nav {
+// #main-nav {
+//   user-select: none;
+//   display: flex;
+//   background-color: #252525;
+//   box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+//   widows: 100%;
+//   height: 100px;
+//   transition: margin-left .5s;
+
+//   span {
+//       font-size: 2.5rem;
+//       float: left;
+//       display: block;
+//       padding: 1.9rem 1rem;
+//       color: #fefefe;
+//       @media(min-width:568px){
+//           display: none;
+//       }
+//   }
+
+//   ul {
+//       margin: 0 auto;
+//       width:60%;
+//       display: flex;
+//       justify-content: space-around;
+//       align-items: center;
+//       @media(max-width:567px){
+//           display: none;
+//       }
+//       li {
+
+//           a {
+//               float: left;
+//               display: block;
+//               color: #fefefebb;
+//               text-align: center;
+//               padding: 14px 16px;
+//               font-size: .9rem;
+//               transition: .3s;
+//               &:hover {
+//                   color:#fff;
+//               }
+//           }
+//       }
+//       a {
+//           h2 {
+//               font-size: 3rem;
+//               font-family: 'Lobster', cursive;
+//               padding: 14px 16px;
+//               color: #fefefe;
+//           }
+//       }
+//   }
+// }
+
+
+
+
+
+
+
+#main-nav {
   background-color: #fff;
   display: grid;
   grid-template-columns: 30% 1fr 140px;
   padding: 0 5%;
   box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.15);
+  transition: margin-left .5s;
+  min-height: 100px;
+  @media(max-width:1050px){
+    grid-template-columns: 30% 70%;
+  }
+
+
+  #menu {
+    font-size: 2.5rem;
+    display: none;
+    padding: 0 0 .2em 0;
+    color: #000000;
+    align-self: center;
+    @media(max-width:1050px){
+        display: block;
+    }
+  }
 
   figure {
     width: 100px;
@@ -11,6 +89,9 @@ nav {
     display: flex;
     align-self: center;
     align-items: center;
+    // @media(max-width:740px){
+    //     display: none;
+    // }
 
     img {
       width: 100%;
@@ -40,6 +121,9 @@ nav {
     display: flex;
     align-self: flex-end;
     position: relative;
+    @media(max-width:1050px){
+      display: none;
+    }
 
     #cta {
       background-color: #921d1d;
@@ -109,6 +193,6 @@ nav {
   #search {
     font-size: 1em;
     align-self: flex-end;
-    padding: 1.5em 1em;
+    padding: 0em 1em 1.5em;
   }
 }

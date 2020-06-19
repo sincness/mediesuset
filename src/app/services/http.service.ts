@@ -8,6 +8,7 @@ import { AuthService } from './auth.service';
 export class HttpService {
   constructor(private http: HttpClient, private auth: AuthService) {}
 
+
   getNyheder() {
     return this.http.get('https://api.mediehuset.net/mediesuset/news');
   }
@@ -38,6 +39,11 @@ export class HttpService {
 
   getTicket(id: string) {
     return this.http.get(`https://api.mediehuset.net/mediesuset/tickets/${id}`);
+  }
+
+  getTicketsSold(id: string) {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.auth.getCookie('token')}`);
+    return this.http.get(`https://api.mediehuset.net/mediesuset/usertickets/num_by_camp_id/${id}`, { headers });
   }
 
   getScenes() {
@@ -81,4 +87,17 @@ export class HttpService {
   token() {
     return this.auth.currentUserValue.access_token;
   }
+
+
+  postBillet(data) {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.auth.getCookie('token')}`);
+    return this.http.post(`https://api.mediehuset.net/mediesuset/usertickets`, data, { headers });
+  }
+
+  postNewsletter(data) {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.auth.getCookie('token')}`);
+    return this.http.post('https://api.mediehuset.net/mediesuset/newsletter', data, { headers });
+  }
+
+
 }

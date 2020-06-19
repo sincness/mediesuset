@@ -9,14 +9,10 @@ import { HttpService } from 'src/app/services/http.service';
 export class EventsComponent implements OnInit {
   events;
   constructor(private http: HttpService) {
-    this.http.getEvents().subscribe((res) => {
+    this.http.getEvents().subscribe(res => {
       this.events = res;
       this.events = this.events.items;
     });
-
-    setTimeout(() => {
-      console.log(this.events);
-    }, 3000);
    }
 
   ngOnInit(): void {

@@ -29,6 +29,13 @@ main {
         grid-template-columns: repeat(3, 1fr);
         gap: 1em;
         padding-bottom: 10em;
+        @media (max-width: 900px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: 800px) {
+            grid-template-columns: 1fr;
+            gap: 2em;
+        }
 
         article {
             background-color: #f5f5f5;
@@ -75,7 +82,7 @@ main {
                 color: #fff;
                 display: block;
                 padding: 1em;
-                margin: 1em 1em 0;
+                margin: 1em auto 0;
                 width: 90%;
                 transition: 200ms ease-in-out;
 

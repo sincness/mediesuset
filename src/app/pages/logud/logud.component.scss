@@ -1,0 +1,23 @@
+main {
+
+    section {
+        width: 20%;
+        margin: 5em auto;
+
+        h2 {
+            margin-bottom: 2em;
+        }
+        form {
+
+            button {
+                border: none;
+                text-transform: uppercase;
+                background-color: #336699;
+                color: #fff;
+                font-weight: 600;
+                padding: .8em 1.8em;
+                font-size: 1em;
+            }
+        }
+    }
+}

@@ -13,10 +13,6 @@ export class NyhederComponent implements OnInit {
       this.nyheder = res;
       this.nyheder = this.nyheder.items;
     });
-
-    setTimeout(() => {
-      console.log(this.nyheder);
-    }, 3000);
   }
   ngOnInit(): void {
   }

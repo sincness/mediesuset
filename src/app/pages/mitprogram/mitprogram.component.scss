@@ -1,8 +1,6 @@
 main {
-
     width: 70%;
     margin: 0 auto 4em;
-
 
     h1 {
         text-align: center;
@@ -44,17 +42,19 @@ main {
         }
 
         .red {
-            background-color: red;
+            background-color: #ac324c;
         }
         .blue {
-            background-color: royalblue;
+            background-color: #336699;
         }
         .green {
-            background-color: greenyellow;
+            background-color: #638b3f;
         }
         .purple {
-            background-color: purple;
+            background-color: #88267f;
         }
 
     }
+
+
 }

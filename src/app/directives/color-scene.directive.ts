@@ -1,14 +1,13 @@
 import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[appSwitch]'
+  selector: '[colorScene]'
 })
-export class SwitchDirective {
+export class ColorSceneDirective {
 
   constructor(element: ElementRef) {
     const checkExist = setInterval(_ => {
-      if (element.nativeElement.dataset.stage.length) {
-        //  console.log("Exists!");
+      if (element.nativeElement.dataset.stage) {
          clearInterval(checkExist);
          check();
       }
@@ -29,9 +28,6 @@ export class SwitchDirective {
             break;
           case 'Lilla scene':
             element.nativeElement.style.backgroundColor = '#88267f';
-            break;
-        
-          default:
             break;
         }
 

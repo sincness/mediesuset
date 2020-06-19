@@ -12,12 +12,25 @@ header {
 
 
 main {
-    width: 90%;
-    padding: 0 5%;
+    width: 70%;
+    margin: 0 auto;
+    padding: 0 5% 10%;
 
     h1 {
         text-align: center;
-        margin: 1em;
+        margin: 1.5em 0;
+    }
+
+    .time{
+        margin-top: 2em;
+        display: inline-block;
+        font-weight: 700;
+    }
+
+    .author {
+        padding-top: .5em;
+        display: block;
+        font-weight: 600;
     }
 
     

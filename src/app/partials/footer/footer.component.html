@@ -7,13 +7,13 @@
   </section>
 
   <section id="newsletter">
-    <form>
+    <form [formGroup]="form">
       <h2>TILMELD NYHEDSBREV</h2>
       <p>Få seneste nyt sendt direkte til din indbakke</p>
 
       <div class="input">
-        <input type="email" name="email" id="email" placeholder="Indtast din email"/>
-        <button type="button" >Tilmeld nyhedsbrev</button>
+        <input type="email" formControlName="email" id="email" placeholder="Indtast din email"/>
+        <button (click)="submit()" type="button" >Tilmeld nyhedsbrev</button>
       </div>
     </form>
     

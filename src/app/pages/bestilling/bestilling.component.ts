@@ -21,17 +21,47 @@ export class BestillingComponent implements OnInit {
       this.billet = res;
       this.billet = this.billet.item;
       this.price = this.billet.price;
-      console.log(this.billet);
+      // console.log(this.billet);
       
     });
    }
 
   ngOnInit(): void {
     this.order = this.fb.group({
+      antal: ['', Validators.required],
+      camppladser: ['', Validators.required],
+      camp: ['', Validators.required],
       username: ['', Validators.required],
       password: ['', Validators.required],
       repeat: ['', Validators.required],
+      name: ['', Validators.required],
+      address: ['', Validators.required],
+      postnumber: ['', Validators.required],
+      city: ['', Validators.required],
+      radio: ['', Validators.required],
     });
+  }
+
+  buy() {
+    const data = new FormData;
+    data.append('quantity', this.order.get('antal').value);
+    data.append('camp_id', this.order.get('camp').value);
+    data.append('email', this.order.get('username').value);
+    data.append('password', this.order.get('password').value);
+    data.append('name', this.order.get('name').value);
+    data.append('address', this.order.get('address').value);
+    data.append('zipcode', this.order.get('postnumber').value);
+    data.append('city', this.order.get('city').value);
+    data.append('type', this.order.get('radio').value);
+    data.append('ticket_id', this.id);
+    this.http.postBillet(data).subscribe(res => {
+      console.log(res);
+
+      // Error handling på status om den er true eller falsey
+
+
+    });
+
   }
 
 

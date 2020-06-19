@@ -1,7 +1,7 @@
 <header>
     <app-nav></app-nav>
 </header>
-<main>
+<main id="main">
     <h1>LINE-UP</h1>
     <section id="options">
         <button [class.active]="this.selected === 'All'" id="all" (click)="filterBy('All', this)" type="button">A - Å</button>
@@ -19,7 +19,7 @@
                     <img [src]="artist.image" alt="Artist">
                 </figure>
 
-                <div [attr.data-stage]="artist.stage_name" class="artist-info" appSwitch>
+                <div [attr.data-stage]="artist.stage_name" class="artist-info" colorScene>
                     <h2>{{artist.title}}</h2>
                     <p>{{time(artist.local_time)}}</p>
                 </div>

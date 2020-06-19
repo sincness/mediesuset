@@ -19,6 +19,12 @@ main {
             width: 100%;
             padding: 1.4em 1em;
             border: none;
+            @media (max-width: 585px) {
+                padding: 1.4em .7em;
+            }
+            @media (max-width: 500px) {
+                padding: 1.4em .5em;
+            }
         }
         #red, #blue, #green, #purple, #filter {
 
@@ -129,7 +135,6 @@ main {
                 }
                 td:nth-child(2) {
                     width: auto;
-                    // text-align: center;
                     position: relative;
                     span {
                         position: absolute;

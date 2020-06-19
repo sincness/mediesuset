@@ -4,7 +4,7 @@
         <img *ngIf="camp" [src]="camp.image" alt="camp.name" />
     </figure>
 </header>
-<main *ngIf="camp">
+<main id="main" *ngIf="camp">
   <h1>{{camp.name}}</h1>
     <article>
       <p class="content">{{ camp.description }}</p>
@@ -14,8 +14,11 @@
       <p *ngFor="let item of camp.facilities">{{ item.title }}</p>
 
     <b>Åbningstider </b> 
+    <p>{{ open.title }} </p> 
     <b>Antal pladser i alt </b> 
     <p>{{ camp.num_people }}</p>
+    <b>Antal ledige pladser </b> 
+    <p>{{ (soldTickets === null) ? camp.num_people : +camp.num_people - +soldTickets }}</p>
     </article>
 </main>
 <app-footer></app-footer>

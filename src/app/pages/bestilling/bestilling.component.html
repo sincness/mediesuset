@@ -1,10 +1,10 @@
 <header>
     <app-nav></app-nav>
     <figure>
-        <img src="../../../assets/images/header_image.jpg" alt="headerimage">
+        <img src="../../../assets/images/buy_header.jpg" alt="headerimage">
     </figure>
 </header>
-<main *ngIf="billet">
+<main id="main" *ngIf="billet">
   <h1>KØB BILLET</h1>
 
   <article>
@@ -23,7 +23,7 @@
       <form [formGroup]="order" method="POST">
 
         <section class="prices">
-            <input type="number" (change)="amplify($event.target.value)" value="1">
+            <input formControlName="antal" type="number" (change)="amplify($event.target.value)" value="1">
             <p>Stk. </p>
             <span>{{ billet.name }}</span>
             <span class="a">á</span>
@@ -43,37 +43,35 @@
                 <div>
                     <section>
                         <div>               
-                            <label class="labels" for="antal">Antal</label>
+                            <label class="labels" for="camppladser">Antal</label>
                             <label class="labels" for="camp">Vælg en camp</label>
                         </div>
-                        <input type="number" name="antal" id="antal">
-                        <select name="camp" id="camp">
-                            <option value="Kultunaut">Camp Kultunaut</option>
-                            <option value="Colorit">Camp Colorit</option>
-                            <option value="Deluxe">Camp De Luxe</option>
+                        <input type="number" name="camppladser" id="antal">
+                        <select formControlName="camp" id="camp">
+                            <option value="1">Camp Kultunaut</option>
+                            <option value="2">Camp Colorit</option>
+                            <option value="3">Camp De Luxe</option>
                         </select>
                     </section>
                 </div>
                 <h3>Indtast dine kundeoplysninger</h3>
                 <label for="username">Brugernavn</label>
-                <input type="text" name="username" id="username">
+                <input type="text" formControlName="username" id="username" placeholder="Indtast dit brugernavn">
                 <label for="password">Adgangskode</label>
-                <input type="password" name="password" id="password">
+                <input type="password" formControlName="password" id="password" placeholder="Indtast en adgangskode">
                 <label for="repeat">Gentag adgangskode</label>
-                <input type="password" name="repeat" id="repeat">
+                <input type="password" formControlName="repeat" id="repeat" placeholder="Gentag adgangskode">
                 <label for="name">Navn</label>
-                <input type="text" name="name" id="name">
+                <input type="text" formControlName="name" id="name" placeholder="Indtast dit navn">
                 <label for="address">Adresse</label>
-                <input type="text" name="address" id="address">
-                <div>
+                <input type="text" formControlName="address" id="address" placeholder="Indtast din adresse">
+                <div class="postcity">
                     <section>
-                        <label for="postnumber">Postnummer</label>
-                        <input type="number" name="postnumber" id="postnumber">
+                        <label class="labels" for="postnumber">Postnummer</label>
+                        <label class="labels" for="city">By</label>
                     </section>
-                    <section>
-                        <label for="city">By</label>
-                        <input type="text" name="city" id="city">
-                    </section>
+                    <input type="number" formControlName="postnumber" id="postnumber">
+                    <input type="text" formControlName="city" id="city" placeholder="Indtast din by">
                 </div>
 
             </section>
@@ -81,12 +79,15 @@
             <section>
 
                 <h3>Vælg forsendelsesmetode</h3>
-
-                <label for="ship"> <span> Jeg ønsker billetterne tilsendt.</span> Vi sender billetterne til dig med posten.</label>
-                <input type="radio" name="ship" id="ship">
-                <label for="print"> <span> Jeg udskriver billetterne selv.</span> Du modtager billetterne på din e-mail. Du kan så selv udskrive dem, og du sparer således forsendelsesgebyret.</label>
-                <input type="radio" name="print" id="print">
-                <button type="submit">Send</button>
+                <div class="radio">
+                    <input type="radio" value="1" formControlName="radio" id="ship">
+                    <label for="ship"> <span> Jeg ønsker billetterne tilsendt.</span> Vi sender billetterne til dig med posten.</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" value="2" formControlName="radio" id="print">
+                    <label for="print"> <span> Jeg udskriver billetterne selv.</span> Du modtager billetterne på din e-mail. Du kan så selv udskrive dem, og du sparer således forsendelsesgebyret.</label>
+                </div>
+                <button (click)="buy()" type="submit">Send</button>
 
 
             </section>

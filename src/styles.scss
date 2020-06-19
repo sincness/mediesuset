@@ -15,6 +15,7 @@ body {
   min-height: 100%;
   background-color: #fafafa;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 a {
@@ -24,4 +25,8 @@ a {
 
 ul {
   list-style: none;
+}
+
+main {
+  transition: margin-left 0.5s;
 }

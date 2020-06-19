@@ -21,13 +21,13 @@ import { FejlComponent } from "./pages/fejl/fejl.component";
 import { BilletterComponent } from "./pages/billetter/billetter.component";
 import { NyhedComponent } from './pages/nyhed/nyhed.component';
 import { LineupComponent } from './pages/lineup/lineup.component';
-import { SwitchDirective } from './directives/switch.directive';
 import { EventComponent } from './pages/event/event.component';
 import { NyhederComponent } from './pages/nyheder/nyheder.component';
 import { LogudComponent } from './pages/logud/logud.component';
 import { CampComponent } from './pages/camp/camp.component';
 import { BestillingComponent } from './pages/bestilling/bestilling.component';
 import { MitprogramComponent } from './pages/mitprogram/mitprogram.component';
+import { ColorSceneDirective } from './directives/color-scene.directive';
 
 
 @NgModule({
@@ -45,13 +45,13 @@ import { MitprogramComponent } from './pages/mitprogram/mitprogram.component';
     BilletterComponent,
     NyhedComponent,
     LineupComponent,
-    SwitchDirective,
     EventComponent,
     NyhederComponent,
     LogudComponent,
     CampComponent,
     BestillingComponent,
     MitprogramComponent,
+    ColorSceneDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [],

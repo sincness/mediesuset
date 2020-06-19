@@ -15,12 +15,14 @@ export class EventComponent implements OnInit {
       this.event = res;
       this.event = this.event.item;
     });
-
-    setTimeout(() => {
-      console.log(this.event);
-    }, 3000);
    }
   ngOnInit(): void {
   }
+
+  time(date: Date) {
+    const d = new Date(date);
+    const days = ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'];
+    return `${days[d.getDay()]} kl. ${d.getHours()}:${(d.getMinutes() === 0) ? '00' : d.getMinutes()}`;
+    }
 
 }

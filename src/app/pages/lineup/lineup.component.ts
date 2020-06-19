@@ -8,7 +8,6 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class LineupComponent implements OnInit {
 
-  days = ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'];
   data;
 
   selected;
@@ -52,8 +51,10 @@ export class LineupComponent implements OnInit {
   }
 
   time(date: Date) {
-    let d = new Date(date);
-    return `${this.days[d.getDay()]} kl. ${d.getHours()}:${(d.getMinutes() === 0) ? '00' : '00'}`;
+  const d = new Date(date);
+  const days = ['Søndag', 'Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag'];
+  
+    return `${days[d.getDay()]} kl. ${d.getHours()}:${(d.getMinutes() === 0) ? '00' : d.getMinutes()}`;
   }
 
   clearArticles() {

@@ -9,15 +9,19 @@ import { HttpService } from "src/app/services/http.service";
 export class ForsideComponent implements OnInit {
   nyheder;
   constructor(private http: HttpService) {
-    this.http.getNyheder().subscribe((res) => {
-      this.nyheder = res;
-      this.nyheder = this.nyheder.items;
-    });
 
-    setTimeout(() => {
-      console.log(this.nyheder);
-    }, 3000);
   }
 
-  ngOnInit(): void {}
+  async ngOnInit() {
+    // Her indhentes et Promise, det vil sige ett nutidsbillede af de værdier der er da kaldet finder sted
+    // afviklet igennem en asynkron funktion med et await
+    this.nyheder = await this.http.getNyheder().toPromise();
+    this.nyheder = this.nyheder.items;
+
+    // Det kunne også har været gjort på denne måde med en subscribe
+    // this.http.getNyheder().subscribe((res) => {
+    //   this.nyheder = res;
+    //   this.nyheder = this.nyheder.items;
+    // });
+  }
 }

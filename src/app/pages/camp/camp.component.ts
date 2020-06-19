@@ -10,34 +10,27 @@ import { Router } from '@angular/router';
 export class CampComponent implements OnInit {
   camp;
   open;
+  soldTickets: any;
   id = this.router.url.replace('/camp/', '');
 
-  constructor(private http: HttpService, private router: Router) {
-    this.http.getCamp(this.id).subscribe(res => {
-      this.camp = res;
-      this.camp = this.camp.item;
-      // this.open = this.camp.facilities.map(item => {
-      //   if (item.id === '8') {
-      //     console.log(item);
-      //     // this.open.push(item);
-      //   } 
-      // });
-    });
-
-    setTimeout(() => {
-      console.log(this.camp);
-    }, 3000);
-
-    // this.camp.facilities.filter(item => item.id === 8 ? this.open = item : this.open = undefined);
-    // this.open = this.camp.facilities.filter(facility => facility.id === 8);
+  constructor(private http: HttpService, private router: Router) { }
 
 
-   }
+  async ngOnInit() {
+    this.camp = await this.http.getCamp(this.id).toPromise();
+    this.open = this.pullElement(this.camp.item.facilities, 8);
+    this.removeElement(this.camp.item.facilities, 8);
+    this.camp = this.camp.item;
+    this.soldTickets = await this.http.getTicketsSold(this.id).toPromise();
+    this.soldTickets = this.soldTickets.num_tickets_sold;
 
-
-  ngOnInit(): void {
   }
 
-  // removeIndex = (array) => array.map(function(item) { return item.id; }).indexOf(8);
+  removeElement(array, i) {
+    (array.findIndex(obj => +obj.id === i) !== 0) ? array.splice(array.findIndex(obj => +obj.id === i)) : array.shift();
+  }
 
+  pullElement(array, i) {
+    return array[array.findIndex(obj => +obj.id === i)];
+  }
 }

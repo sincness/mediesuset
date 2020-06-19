@@ -66,7 +66,7 @@ export class ProgramComponent implements OnInit {
 
   whatTime(datetime: number) {
     const d = new Date(datetime);
-    return `${d.getHours()}:${(d.getMinutes() === 0) ? '00' : '00'}`;
+    return `${d.getHours()}:${(d.getMinutes() === 0) ? '00' : d.getMinutes()}`;
   }
 
   reset() {

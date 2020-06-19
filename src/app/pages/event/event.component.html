@@ -1,16 +1,16 @@
 <header>
     <app-nav></app-nav>
+    <figure *ngIf="event">
+      <img [src]="event.image" alt="event.title" />
+  </figure>
 </header>
-<main>
+<main id="main">
   <section>
     <article *ngIf="event">
-        <figure>
-            <img [src]="event.image" alt="event.title" />
-        </figure>
       <h1>{{ event.title }}</h1>
-      <!-- <p>{{ event.description }}</p> -->
-      <div class="fade"></div>
-      <a routerLink="/events">VEND TILBAGE</a>
+      <h2 [attr.data-stage]="event.stage_name" colorScene>{{ event.stage_name }}</h2>
+      <p>{{ time(event.local_time) }}</p>
+      <p>{{ event.description }}</p>
     </article>
   </section>
 </main>

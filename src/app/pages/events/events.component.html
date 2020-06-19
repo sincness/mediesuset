@@ -4,7 +4,7 @@
         <img src="../../../assets/images/header_image.jpg" alt="headerimage">
     </figure>
 </header>
-<main>
+<main id="main">
   <h1>EVENTS</h1>
   <section>
     <article *ngFor="let event of events">
@@ -13,7 +13,7 @@
         </figure>
       <h3>{{ event.title }}</h3>
       <!-- <p>{{ event.description }}</p> -->
-      <div class="fade"></div>
+      <!-- <div class="fade"></div> -->
       <a routerLink="/event/{{ event.id }}">LÆS MERE</a>
     </article>
   </section>

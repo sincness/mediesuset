@@ -1,1 +1,14 @@
 <router-outlet></router-outlet>
+
+<nav id="side-nav">
+    <!-- <span (click)="menuOpen = !menuOpen; menu()" class="material-icons">menu_open</span> -->
+    <ul>
+        <li><a routerLink="/forside" (click)="anim()">NYHEDER</a></li>
+        <li><a routerLink="/events" (click)="anim()">EVENTS</a></li>
+        <li><a routerLink="/program" (click)="anim()">PROGRAM</a></li>
+        <li><a routerLink="/lineup" (click)="anim()">LINE-UP</a></li>
+        <li><a routerLink="/camps" (click)="anim()">CAMPS</a></li>
+        <li><a routerLink="/info" (click)="anim()">PRAKTISK INFO</a></li>
+        <li><a routerLink="/login" (click)="anim()">LOGIN</a></li>
+    </ul>
+</nav>

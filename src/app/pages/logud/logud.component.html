@@ -1,12 +1,12 @@
 <header>
     <app-nav></app-nav>
 </header>
-<main>
+<main id="main">
     <section id="logout">
         <div class="triangle"></div>
         <h2>Vil du logge ud?</h2>
         <form (ngSubmit)="logout()">
-            <input type="submit" value="Log ud">
+            <button type="submit">Log ud</button>
         </form>
     </section>
 </main>
