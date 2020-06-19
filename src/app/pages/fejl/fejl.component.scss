@@ -1,19 +1,12 @@
 header {
-    figure {
-        width: 100%;
 
-        img {
-            object-fit: cover;
-            width: 100%;
-            height: 420px;
-        }
-    }
 }
 
-main {
-    width: 90%;
-    padding: 0 5%;
+main {  
     min-height: 50em;
-
+    h1 {
+        text-align: center;
+        padding-top: 9em;
+    }
 
 }
